@@ -30,7 +30,7 @@ struct SoftDecisionView: View {
                                 HStack(spacing: 0) {
                                     CardValueLabel(cardValue: cardValue, width: width)
                                     ForEach(CardValue.allCases) { thisDealerCardValue in
-                                        let decision = SoftDecisions.matrix[cardValue.index][thisDealerCardValue.index]
+                                        let decision = defaultSoftDecisions[cardValue.index][thisDealerCardValue.index]
                                         DecisionCell(
                                             decision: decision,
                                             myHandValue: myHandValue,
