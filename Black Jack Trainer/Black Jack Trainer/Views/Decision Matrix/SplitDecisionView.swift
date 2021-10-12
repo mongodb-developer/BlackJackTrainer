@@ -11,8 +11,9 @@ import RealmSwift
 struct SplitDecisionView: View {
     @ObservedResults(Decisions.self, filter: NSPredicate(format: "isSplit == YES")) var decisions
     
-    let myHandValue: Int
-    let dealerCardValue: CardValue
+    var myHandValue: Int? = nil
+    var dealerCardValue: CardValue? = nil
+    var editable = false
     
     let elements = 11.0
     let width = 35.0
@@ -34,19 +35,27 @@ struct SplitDecisionView: View {
                                     CardValueLabel(cardValue: cardValue, width: width)
                                     ForEach(CardValue.allCases) { thisDealerCardValue in
                                         let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
-                                        DecisionCell(
-                                            decision: decision,
-                                            myHandValue: myHandValue,
-                                            dealerCardValue: dealerCardValue,
-                                            width: width)
+                                        if editable {
+                                            EditDecisionCell(decision: decision, width: width)
+                                        } else {
+                                            if let myHandValue = myHandValue, let dealerCardValue = dealerCardValue {
+                                                DecisionCell(
+                                                    decision: decision,
+                                                    myHandValue: myHandValue,
+                                                    dealerCardValue: dealerCardValue,
+                                                    width: width)
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                Spacer()
             }
-            .padding(.trailing)
+            .padding([.trailing, .top])
+            .navigationBarTitle(editable ? "Tap Cells to Edit" : "Split Hand", displayMode: .inline)
         }
     }
 }

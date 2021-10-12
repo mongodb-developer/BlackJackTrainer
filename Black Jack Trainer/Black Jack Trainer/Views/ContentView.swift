@@ -10,8 +10,10 @@ import RealmSwift
 
 struct ContentView: View {
     var body: some View {
-        PracticeView()
-            .onAppear(perform: bootstrapDecisions)
+        NavigationView {
+            PracticeView()
+                .onAppear(perform: bootstrapDecisions)
+        }
     }
     
     private func bootstrapDecisions() {

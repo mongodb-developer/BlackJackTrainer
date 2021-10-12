@@ -11,6 +11,7 @@ struct PracticeView: View {
     @StateObject var card1 = Card()
     @StateObject var card2 = Card()
     @StateObject var dealerCard = Card()
+    @State private var showingSettings = false
     
     var body: some View {
         VStack {
@@ -28,7 +29,14 @@ struct PracticeView: View {
             Spacer()
             ActionAreaView(card1: card1, card2: card2, dealerCard: dealerCard)
                 .padding()
+            NavigationLink(destination: SettingsView(), isActive: $showingSettings) {
+                EmptyView()
+            }
         }
+        .navigationBarItems(trailing: Button(action: { showingSettings.toggle() }) {
+            Image(systemName: "gear")
+                .foregroundColor(.primary)
+        })
     }
 }
 
