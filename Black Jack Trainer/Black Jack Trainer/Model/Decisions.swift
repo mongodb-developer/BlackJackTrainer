@@ -27,13 +27,16 @@ enum HandType: Int, PersistableEnum {
 
 class Decisions: Object, ObjectKeyIdentifiable {
     @Persisted var decisions = List<DecisionList>()
-    @Persisted var handType = HandType.normal
+//    @Persisted var handType = HandType.normal
+    @Persisted var isSoft = false
+    @Persisted var isSplit = false
     
     func bootstrap(defaults: [[Decision]], handType: HandType) {
         do {
             try Realm().write {
                 decisions = List<DecisionList>()
-                self.handType = handType
+                isSoft = handType == .soft
+                isSplit = handType == .split
                 defaults.forEach() { decisionList in
                     decisions.append(DecisionList(decisionList))
                 }

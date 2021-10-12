@@ -14,7 +14,7 @@ struct PracticeView: View {
     
     var body: some View {
         VStack {
-            if card1.face == card2.face {
+            if card1.face.value == card2.face.value {
                 SplitDecisionView(myHandValue: card1.valueAsInt, dealerCardValue: dealerCard.value)
             } else if card1.isSoft || card2.isSoft {
                 SoftDecisionView(

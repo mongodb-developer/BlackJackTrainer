@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SoftDecisionView: View {
+    @ObservedResults(Decisions.self, filter: NSPredicate(format: "isSoft == YES")) var decisions
+    
     let myHandValue: Int
     let dealerCardValue: CardValue
     
@@ -15,27 +18,29 @@ struct SoftDecisionView: View {
     let width = 35.0
     
     var body: some View {
-        VStack {
-            HStack(spacing: 0) {
-                VStack(spacing: 0) {
-                    HStack(spacing: 0) {
-                        CardValueLabel(width: width)
-                        ForEach(CardValue.allCases) { valueLabel in
-                            CardValueLabel(cardValue: valueLabel, width: width)
-                        }
-                    }
+        if let decisions = decisions.first {
+            VStack {
+                HStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        ForEach(CardValue.allCases.reversed()) { cardValue in
-                            if cardValue != .ace {
-                                HStack(spacing: 0) {
-                                    CardValueLabel(cardValue: cardValue, width: width)
-                                    ForEach(CardValue.allCases) { thisDealerCardValue in
-                                        let decision = defaultSoftDecisions[cardValue.index][thisDealerCardValue.index]
-                                        DecisionCell(
-                                            decision: decision,
-                                            myHandValue: myHandValue,
-                                            dealerCardValue: dealerCardValue,
-                                            width: width)
+                        HStack(spacing: 0) {
+                            CardValueLabel(width: width)
+                            ForEach(CardValue.allCases) { valueLabel in
+                                CardValueLabel(cardValue: valueLabel, width: width)
+                            }
+                        }
+                        VStack(spacing: 0) {
+                            ForEach(CardValue.allCases.reversed()) { cardValue in
+                                if cardValue != .ace {
+                                    HStack(spacing: 0) {
+                                        CardValueLabel(cardValue: cardValue, width: width)
+                                        ForEach(CardValue.allCases) { thisDealerCardValue in
+                                            let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
+                                            DecisionCell(
+                                                decision: decision,
+                                                myHandValue: myHandValue,
+                                                dealerCardValue: dealerCardValue,
+                                                width: width)
+                                        }
                                     }
                                 }
                             }
@@ -43,8 +48,8 @@ struct SoftDecisionView: View {
                     }
                 }
             }
+            .padding(.trailing)
         }
-        .padding(.trailing)
     }
 }
 
