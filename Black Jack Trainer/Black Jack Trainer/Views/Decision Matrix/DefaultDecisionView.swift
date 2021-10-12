@@ -29,7 +29,7 @@ struct DefaultDecisionView: View {
                             HStack(spacing: 0) {
                                 HandValueLabel(handValue: handValue, width: width)
                                 ForEach(CardValue.allCases) { thisDealerCardValue in
-                                    let decision = DefaultDecisions.matrix[handValue - 5].decisions[thisDealerCardValue.index]
+                                    let decision = DefaultDecisions.matrix[handValue - 5][thisDealerCardValue.index]
                                     DecisionCell(
                                         decision: decision,
                                         myHandValue: myHandValue,

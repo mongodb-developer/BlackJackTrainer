@@ -7,27 +7,9 @@
 
 import Foundation
 
-class SplitDecisionRow {
-    var card: CardValue = .ace
-    var decisions = [Decision]()
-    
-    convenience init(_ cardValue: CardValue, decisions: [Decision]) {
-        self.init()
-        card = cardValue
-        self.decisions = decisions
-    }
-}
-
 class SplitDecisions {
-    static func decision(myCard: Card, dealerCard: Card) -> Action {
-        let myCardValueIndex = myCard.value.index
-        let dealerCardValueIndex = dealerCard.value.index
-        
-        return matrix[myCardValueIndex].decisions[dealerCardValueIndex].action
-    }
-    
-    static let matrix: [SplitDecisionRow] = [
-        SplitDecisionRow(.two, decisions: [
+    static let matrix: [[Decision]] = [
+        [
              Decision(handValue: 2, dealerCardValue: .two, action: .split),
              Decision(handValue: 2, dealerCardValue: .three, action: .split),
              Decision(handValue: 2, dealerCardValue: .four, action: .split),
@@ -38,8 +20,8 @@ class SplitDecisions {
              Decision(handValue: 2, dealerCardValue: .nine, action: .hit),
              Decision(handValue: 2, dealerCardValue: .ten, action: .hit),
              Decision(handValue: 2, dealerCardValue: .ace, action: .hit)
-        ]),
-        SplitDecisionRow(.three, decisions: [
+        ],
+        [
              Decision(handValue: 3, dealerCardValue: .two, action: .split),
              Decision(handValue: 3, dealerCardValue: .three, action: .split),
              Decision(handValue: 3, dealerCardValue: .four, action: .split),
@@ -50,8 +32,8 @@ class SplitDecisions {
              Decision(handValue: 3, dealerCardValue: .nine, action: .hit),
              Decision(handValue: 3, dealerCardValue: .ten, action: .hit),
              Decision(handValue: 3, dealerCardValue: .ace, action: .hit)
-        ]),
-        SplitDecisionRow(.four, decisions: [
+        ],
+        [
              Decision(handValue: 4, dealerCardValue: .two, action: .hit),
              Decision(handValue: 4, dealerCardValue: .three, action: .hit),
              Decision(handValue: 4, dealerCardValue: .four, action: .hit),
@@ -62,8 +44,8 @@ class SplitDecisions {
              Decision(handValue: 4, dealerCardValue: .nine, action: .hit),
              Decision(handValue: 4, dealerCardValue: .ten, action: .hit),
              Decision(handValue: 4, dealerCardValue: .ace, action: .hit)
-        ]),
-        SplitDecisionRow(.five, decisions: [
+        ],
+        [
              Decision(handValue: 5, dealerCardValue: .two, action: .double),
              Decision(handValue: 5, dealerCardValue: .three, action: .double),
              Decision(handValue: 5, dealerCardValue: .four, action: .double),
@@ -74,8 +56,8 @@ class SplitDecisions {
              Decision(handValue: 5, dealerCardValue: .nine, action: .double),
              Decision(handValue: 5, dealerCardValue: .ten, action: .hit),
              Decision(handValue: 5, dealerCardValue: .ace, action: .hit)
-        ]),
-        SplitDecisionRow(.six, decisions: [
+        ],
+        [
             Decision(handValue: 6, dealerCardValue: .two, action: .split),
             Decision(handValue: 6, dealerCardValue: .three, action: .split),
             Decision(handValue: 6, dealerCardValue: .four, action: .split),
@@ -86,8 +68,8 @@ class SplitDecisions {
             Decision(handValue: 6, dealerCardValue: .nine, action: .hit),
             Decision(handValue: 6, dealerCardValue: .ten, action: .hit),
             Decision(handValue: 6, dealerCardValue: .ace, action: .hit)
-       ]),
-        SplitDecisionRow(.seven, decisions: [
+        ],
+        [
              Decision(handValue: 7, dealerCardValue: .two, action: .split),
              Decision(handValue: 7, dealerCardValue: .three, action: .split),
              Decision(handValue: 7, dealerCardValue: .four, action: .split),
@@ -98,8 +80,8 @@ class SplitDecisions {
              Decision(handValue: 7, dealerCardValue: .nine, action: .hit),
              Decision(handValue: 7, dealerCardValue: .ten, action: .hit),
              Decision(handValue: 7, dealerCardValue: .ace, action: .hit)
-        ]),
-        SplitDecisionRow(.eight, decisions: [
+        ],
+        [
              Decision(handValue: 8, dealerCardValue: .two, action: .split),
              Decision(handValue: 8, dealerCardValue: .three, action: .split),
              Decision(handValue: 8, dealerCardValue: .four, action: .split),
@@ -110,8 +92,8 @@ class SplitDecisions {
              Decision(handValue: 8, dealerCardValue: .nine, action: .split),
              Decision(handValue: 8, dealerCardValue: .ten, action: .split),
              Decision(handValue: 8, dealerCardValue: .ace, action: .split)
-        ]),
-        SplitDecisionRow(.nine, decisions: [
+        ],
+        [
              Decision(handValue: 9, dealerCardValue: .two, action: .split),
              Decision(handValue: 9, dealerCardValue: .three, action: .split),
              Decision(handValue: 9, dealerCardValue: .four, action: .split),
@@ -122,9 +104,8 @@ class SplitDecisions {
              Decision(handValue: 9, dealerCardValue: .nine, action: .split),
              Decision(handValue: 9, dealerCardValue: .ten, action: .stand),
              Decision(handValue: 9, dealerCardValue: .ace, action: .stand)
-        ]),
-        
-        SplitDecisionRow(.ten, decisions: [
+        ],
+        [
              Decision(handValue: 10, dealerCardValue: .two, action: .stand),
              Decision(handValue: 10, dealerCardValue: .three, action: .stand),
              Decision(handValue: 10, dealerCardValue: .four, action: .stand),
@@ -135,8 +116,8 @@ class SplitDecisions {
              Decision(handValue: 10, dealerCardValue: .nine, action: .stand),
              Decision(handValue: 10, dealerCardValue: .ten, action: .stand),
              Decision(handValue: 10, dealerCardValue: .ace, action: .stand)
-        ]),
-        SplitDecisionRow(.ace, decisions: [
+        ],
+        [
             Decision(handValue: 11, dealerCardValue: .two, action: .split),
             Decision(handValue: 11, dealerCardValue: .three, action: .split),
             Decision(handValue: 11, dealerCardValue: .four, action: .split),
@@ -147,6 +128,6 @@ class SplitDecisions {
             Decision(handValue: 11, dealerCardValue: .nine, action: .split),
             Decision(handValue: 11, dealerCardValue: .ten, action: .split),
             Decision(handValue: 11, dealerCardValue: .ace, action: .split)
-        ])
+        ]
     ]
 }
