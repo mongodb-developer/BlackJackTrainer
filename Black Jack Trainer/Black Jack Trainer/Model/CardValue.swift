@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-@objc enum CardValue: Int, CaseIterable, Identifiable, RealmEnum {
+enum CardValue: Int, CaseIterable, Identifiable, PersistableEnum {
     case two = 2
     case three = 3
     case four = 4

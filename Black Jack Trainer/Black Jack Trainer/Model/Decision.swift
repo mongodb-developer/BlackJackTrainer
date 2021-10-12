@@ -8,10 +8,10 @@
 import SwiftUI
 import RealmSwift
 
-@objcMembers class Decision: Object, ObjectKeyIdentifiable {
-    dynamic var handValue = 0
-    dynamic var dealerCardValue: CardValue = .ace
-    dynamic var action: Action = .stand
+class Decision: Object, ObjectKeyIdentifiable {
+    @Persisted var handValue = 0
+    @Persisted var dealerCardValue: CardValue = .ace
+    @Persisted var action: Action = .stand
     
     var actionString: String {
         switch action {

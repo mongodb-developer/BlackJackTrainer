@@ -25,6 +25,7 @@
 		0AB346682715A10B00806633 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB346672715A10B00806633 /* Realm */; };
 		0AB3466A2715A10B00806633 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB346692715A10B00806633 /* RealmSwift */; };
 		0AB3466E2715B43400806633 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466D2715B43400806633 /* Defaults.swift */; };
+		0AB346702715B6B800806633 /* Decisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466F2715B6B800806633 /* Decisions.swift */; };
 		0AB7622927144E3D00DA06A8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622827144E3D00DA06A8 /* Card.swift */; };
 		0AB7622E271456FC00DA06A8 /* DecisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622D271456FC00DA06A8 /* DecisionCell.swift */; };
 		0AB762302714606700DA06A8 /* SplitDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */; };
@@ -48,6 +49,7 @@
 		0AB3466227157DDB00806633 /* DefaultDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecisionView.swift; sourceTree = "<group>"; };
 		0AB34664271580D000806633 /* HandValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandValueLabel.swift; sourceTree = "<group>"; };
 		0AB3466D2715B43400806633 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		0AB3466F2715B6B800806633 /* Decisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decisions.swift; sourceTree = "<group>"; };
 		0AB7622827144E3D00DA06A8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0AB7622D271456FC00DA06A8 /* DecisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionCell.swift; sourceTree = "<group>"; };
 		0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDecisionView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				0A779CE32710DB6D00026A86 /* CardValue.swift */,
 				0A779CE12710DADA00026A86 /* Action.swift */,
 				0A779CDF2710DA7200026A86 /* Decision.swift */,
+				0AB3466F2715B6B800806633 /* Decisions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				0A2CB5AF27148832003A4960 /* CardValueLabel.swift in Sources */,
 				0A2CB5B127148B7D003A4960 /* y-axis-label.swift in Sources */,
 				0A779CD22710D9DE00026A86 /* ContentView.swift in Sources */,
+				0AB346702715B6B800806633 /* Decisions.swift in Sources */,
 				0A779CE22710DADA00026A86 /* Action.swift in Sources */,
 				0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */,
 				0AB7622E271456FC00DA06A8 /* DecisionCell.swift in Sources */,
