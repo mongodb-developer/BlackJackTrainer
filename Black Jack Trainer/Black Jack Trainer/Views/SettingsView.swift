@@ -11,6 +11,7 @@ struct SettingsView: View {
     @State private var showingDefaultMatrix = false
     @State private var showingSplitMatrix = false
     @State private var showingSoftMatrix = false
+    @State private var isConfirming = false
     
     var body: some View {
         Form {
@@ -42,6 +43,20 @@ struct SettingsView: View {
                             .foregroundColor(.secondary)
                     }
                 }
+                HStack {
+                    Spacer()
+                    Button("Reset All Matrices") { isConfirming = true }
+                    .buttonStyle(.bordered)
+                    .confirmationDialog("Are you sure reset all of the decision matrices to their defaults",
+                                        isPresented: $isConfirming) {
+                        Button("Confirm Reset", role: .destructive) {
+                            Decisions.bootstrapDecisions()
+                        }
+                        Button("Cancel", role: .cancel) {}
+                    }
+                    Spacer()
+                }
+                .padding()
             }
         }
         .navigationBarTitle("Settings", displayMode: .inline)

@@ -17,28 +17,31 @@ struct ContentView: View {
     }
     
     private func bootstrapDecisions() {
-        print("Checking to see if existing decisions are in Realm")
-        do {
-            let realm = try Realm()
-            let decisionObjects = realm.objects(Decisions.self)
-            if decisionObjects.count == 0 {
-                print("Bootstrapping decision objects")
-                let defaultDecisions = Decisions()
-                let softDecisions = Decisions()
-                let splitDecisions = Decisions()
-                
-                defaultDecisions.bootstrap(defaults: defaultDefaultDecisions, handType: .normal)
-                softDecisions.bootstrap(defaults: defaultSoftDecisions, handType: .soft)
-                splitDecisions.bootstrap(defaults: defaultSplitDecisions, handType: .split)
-                try realm.write {
-                    realm.add(defaultDecisions)
-                    realm.add(softDecisions)
-                    realm.add(splitDecisions)
-                }
-            }
-        } catch {
-            print("Error, couldn't read decision objects from Realm: \(error.localizedDescription)")
+        if !Decisions.areDecisionsPopulated {
+            Decisions.bootstrapDecisions()
         }
+//        print("Checking to see if existing decisions are in Realm")
+//        do {
+//            let realm = try Realm()
+//            let decisionObjects = realm.objects(Decisions.self)
+//            if decisionObjects.count == 0 {
+//                print("Bootstrapping decision objects")
+//                let defaultDecisions = Decisions()
+//                let softDecisions = Decisions()
+//                let splitDecisions = Decisions()
+//
+//                defaultDecisions.bootstrap(defaults: defaultDefaultDecisions, handType: .normal)
+//                softDecisions.bootstrap(defaults: defaultSoftDecisions, handType: .soft)
+//                splitDecisions.bootstrap(defaults: defaultSplitDecisions, handType: .split)
+//                try realm.write {
+//                    realm.add(defaultDecisions)
+//                    realm.add(softDecisions)
+//                    realm.add(splitDecisions)
+//                }
+//            }
+//        } catch {
+//            print("Error, couldn't read decision objects from Realm: \(error.localizedDescription)")
+//        }
     }
 }
 
