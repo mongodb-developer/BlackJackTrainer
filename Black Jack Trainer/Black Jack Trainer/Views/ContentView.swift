@@ -6,15 +6,32 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
     var body: some View {
-        PracticeView()
+        NavigationView {
+            PracticeView()
+                .onAppear(perform: bootstrapDecisions)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    private func bootstrapDecisions() {
+        if !Decisions.areDecisionsPopulated {
+            Decisions.bootstrapDecisions()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+                .preferredColorScheme(.dark)
+            ContentView()
+                .previewInterfaceOrientation(.landscapeRight)
+        }
     }
 }

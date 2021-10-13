@@ -5,14 +5,13 @@
 //  Created by Andrew Morgan on 08/10/2021.
 //
 
-import Foundation
 import SwiftUI
+import RealmSwift
 
-class Decision: Identifiable {
-    let id = UUID.init()
-    var handValue = 0
-    var dealerCardValue: CardValue = .ace
-    var action: Action = .stand
+class Decision: Object, ObjectKeyIdentifiable {
+    @Persisted var handValue = 0
+    @Persisted var dealerCardValue: CardValue = .ace
+    @Persisted var action: Action = .stand
     
     var actionString: String {
         switch action {

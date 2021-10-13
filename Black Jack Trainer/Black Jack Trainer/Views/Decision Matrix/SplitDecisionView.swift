@@ -6,55 +6,71 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SplitDecisionView: View {
-    let myHandValue: Int
-    let dealerCardValue: CardValue
+    @ObservedResults(Decisions.self, filter: NSPredicate(format: "isSplit == YES")) var decisions
     
-    let elements = 11.0
-    let width = 35.0
+    var myHandValue: Int? = nil
+    var dealerCardValue: CardValue? = nil
+    var editable = false
     
     var body: some View {
-        VStack {
-//            GeometryReader { geometry in
+        if let decisions = decisions.first {
+            VStack {
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
                         HStack(spacing: 0) {
-//                            CardValueLabel(width: geometry.size.width * 1 / elements)
-                            CardValueLabel(width: width)
+                            CardValueLabel()
                             ForEach(CardValue.allCases) { valueLabel in
-                                CardValueLabel(cardValue: valueLabel, width: width)
-//                                CardValueLabel(cardValue: valueLabel, width: geometry.size.width / elements)
+                                CardValueLabel(cardValue: valueLabel)
                             }
                         }
                         VStack(spacing: 0) {
                             ForEach(CardValue.allCases.reversed()) { cardValue in
                                 HStack(spacing: 0) {
-//                                    CardValueLabel(cardValue: cardValue, width: geometry.size.width * 1 / elements)
-                                    CardValueLabel(cardValue: cardValue, width: width)
+                                    CardValueLabel(cardValue: cardValue)
                                     ForEach(CardValue.allCases) { thisDealerCardValue in
-                                        let decision = SplitDecisions.matrix[cardValue.index].decisions[thisDealerCardValue.index]
-                                        DecisionCell(
-                                            decision: decision,
-                                            myHandValue: myHandValue,
-                                            dealerCardValue: dealerCardValue,
-                                            width: width)
-//                                            width: geometry.size.width / elements)
+                                        let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
+                                        if editable {
+                                            EditDecisionCell(decision: decision)
+                                        } else {
+                                            if let myHandValue = myHandValue, let dealerCardValue = dealerCardValue {
+                                                DecisionCell(
+                                                    decision: decision,
+                                                    myHandValue: myHandValue,
+                                                    dealerCardValue: dealerCardValue)
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-//            }
+                Spacer()
+            }
+            .padding([.trailing, .top])
+            .navigationBarTitle(editable ? "Tap Cells to Edit" : "Split Hand", displayMode: .inline)
         }
-        .padding(.trailing)
     }
 }
 
+//struct SplitDecisionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            SplitDecisionView()
+//        }
+//    }
+//}
+
 struct SplitDecisionView_Previews: PreviewProvider {
     static var previews: some View {
-        SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
-            .padding(0)
+        if !Decisions.areDecisionsPopulated {
+            Decisions.bootstrapDecisions()
+        }
+        return NavigationView {
+            SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
+        }
     }
 }

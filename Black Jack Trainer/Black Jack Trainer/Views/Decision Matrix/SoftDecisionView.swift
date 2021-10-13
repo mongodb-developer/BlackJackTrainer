@@ -6,51 +6,63 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SoftDecisionView: View {
-    let myHandValue: Int
-    let dealerCardValue: CardValue
+    @ObservedResults(Decisions.self, filter: NSPredicate(format: "isSoft == YES")) var decisions
     
-    let elements = 11.0
-    let width = 35.0
+    var myHandValue: Int? = nil
+    var dealerCardValue: CardValue? = nil
+    var editable = false
     
     var body: some View {
-        VStack {
-            HStack(spacing: 0) {
-                VStack(spacing: 0) {
-                    HStack(spacing: 0) {
-                        CardValueLabel(width: width)
-                        ForEach(CardValue.allCases) { valueLabel in
-                            CardValueLabel(cardValue: valueLabel, width: width)
-                        }
-                    }
+        if let decisions = decisions.first {
+            VStack {
+                HStack(spacing: 0) {
                     VStack(spacing: 0) {
-                        ForEach(CardValue.allCases.reversed()) { cardValue in
-                            if cardValue != .ace {
-                                HStack(spacing: 0) {
-                                    CardValueLabel(cardValue: cardValue, width: width)
-                                    ForEach(CardValue.allCases) { thisDealerCardValue in
-                                        let decision = SoftDecisions.matrix[cardValue.index].decisions[thisDealerCardValue.index]
-                                        DecisionCell(
-                                            decision: decision,
-                                            myHandValue: myHandValue,
-                                            dealerCardValue: dealerCardValue,
-                                            width: width)
+                        HStack(spacing: 0) {
+                            CardValueLabel()
+                            ForEach(CardValue.allCases) { valueLabel in
+                                CardValueLabel(cardValue: valueLabel)
+                            }
+                        }
+                        VStack(spacing: 0) {
+                            ForEach(CardValue.allCases.reversed()) { cardValue in
+                                if cardValue != .ace {
+                                    HStack(spacing: 0) {
+                                        CardValueLabel(cardValue: cardValue)
+                                        ForEach(CardValue.allCases) { thisDealerCardValue in
+                                            let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
+                                            if editable {
+                                                EditDecisionCell(decision: decision)
+                                            } else {
+                                                if let myHandValue = myHandValue, let dealerCardValue = dealerCardValue {
+                                                    DecisionCell(
+                                                        decision: decision,
+                                                        myHandValue: myHandValue,
+                                                        dealerCardValue: dealerCardValue)
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                Spacer()
             }
+            .padding([.trailing, .top])
+            .navigationBarTitle(editable ? "Tap Cells to Edit" : "Soft Hand", displayMode: .inline)
         }
-        .padding(.trailing)
     }
 }
 
 struct SoftDecisionView_Previews: PreviewProvider {
     static var previews: some View {
-        SoftDecisionView(myHandValue: 6, dealerCardValue: .nine)
-            .padding(0)
+        if !Decisions.areDecisionsPopulated {
+            Decisions.bootstrapDecisions()
+        }
+        return SoftDecisionView(myHandValue: 6, dealerCardValue: .nine)
     }
 }

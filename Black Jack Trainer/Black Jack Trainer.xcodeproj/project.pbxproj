@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A2CB5AF27148832003A4960 /* CardValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CB5AE27148832003A4960 /* CardValueLabel.swift */; };
-		0A2CB5B127148B7D003A4960 /* y-axis-label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CB5B027148B7D003A4960 /* y-axis-label.swift */; };
 		0A2CB5B327149719003A4960 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CB5B227149719003A4960 /* CardView.swift */; };
 		0A2CB5B52714A545003A4960 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CB5B42714A545003A4960 /* PracticeView.swift */; };
 		0A2CB5B82714A9A0003A4960 /* ActionAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CB5B72714A9A0003A4960 /* ActionAreaView.swift */; };
@@ -19,13 +18,17 @@
 		0A779CE02710DA7200026A86 /* Decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CDF2710DA7200026A86 /* Decision.swift */; };
 		0A779CE22710DADA00026A86 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE12710DADA00026A86 /* Action.swift */; };
 		0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE32710DB6D00026A86 /* CardValue.swift */; };
-		0A779CE62710DDA600026A86 /* SplitDecisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE52710DDA600026A86 /* SplitDecisions.swift */; };
-		0A779CE82710E4F200026A86 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE72710E4F200026A86 /* Hand.swift */; };
-		0AB3465D2714D76600806633 /* SoftDecisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3465C2714D76600806633 /* SoftDecisions.swift */; };
 		0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */; };
-		0AB346612714E5AD00806633 /* DeafultDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB346602714E5AD00806633 /* DeafultDecision.swift */; };
 		0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466227157DDB00806633 /* DefaultDecisionView.swift */; };
 		0AB34665271580D000806633 /* HandValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB34664271580D000806633 /* HandValueLabel.swift */; };
+		0AB346682715A10B00806633 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB346672715A10B00806633 /* Realm */; };
+		0AB3466A2715A10B00806633 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB346692715A10B00806633 /* RealmSwift */; };
+		0AB3466E2715B43400806633 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466D2715B43400806633 /* Defaults.swift */; };
+		0AB346702715B6B800806633 /* Decisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466F2715B6B800806633 /* Decisions.swift */; };
+		0AB346722715E94400806633 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB346712715E94400806633 /* SettingsView.swift */; };
+		0AB346742715EEB000806633 /* EditDecisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB346732715EEB000806633 /* EditDecisionCell.swift */; };
+		0AB346762717266D00806633 /* DecisionMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB346752717266C00806633 /* DecisionMatrixView.swift */; };
+		0AB34678271727CD00806633 /* AppearancePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB34677271727CC00806633 /* AppearancePreviews.swift */; };
 		0AB7622927144E3D00DA06A8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622827144E3D00DA06A8 /* Card.swift */; };
 		0AB7622E271456FC00DA06A8 /* DecisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622D271456FC00DA06A8 /* DecisionCell.swift */; };
 		0AB762302714606700DA06A8 /* SplitDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */; };
@@ -33,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		0A2CB5AE27148832003A4960 /* CardValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValueLabel.swift; sourceTree = "<group>"; };
-		0A2CB5B027148B7D003A4960 /* y-axis-label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "y-axis-label.swift"; sourceTree = "<group>"; };
 		0A2CB5B227149719003A4960 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0A2CB5B42714A545003A4960 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		0A2CB5B72714A9A0003A4960 /* ActionAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionAreaView.swift; sourceTree = "<group>"; };
@@ -45,13 +47,15 @@
 		0A779CDF2710DA7200026A86 /* Decision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decision.swift; sourceTree = "<group>"; };
 		0A779CE12710DADA00026A86 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		0A779CE32710DB6D00026A86 /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
-		0A779CE52710DDA600026A86 /* SplitDecisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDecisions.swift; sourceTree = "<group>"; };
-		0A779CE72710E4F200026A86 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
-		0AB3465C2714D76600806633 /* SoftDecisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDecisions.swift; sourceTree = "<group>"; };
 		0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDecisionView.swift; sourceTree = "<group>"; };
-		0AB346602714E5AD00806633 /* DeafultDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeafultDecision.swift; sourceTree = "<group>"; };
 		0AB3466227157DDB00806633 /* DefaultDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecisionView.swift; sourceTree = "<group>"; };
 		0AB34664271580D000806633 /* HandValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandValueLabel.swift; sourceTree = "<group>"; };
+		0AB3466D2715B43400806633 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		0AB3466F2715B6B800806633 /* Decisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decisions.swift; sourceTree = "<group>"; };
+		0AB346712715E94400806633 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0AB346732715EEB000806633 /* EditDecisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDecisionCell.swift; sourceTree = "<group>"; };
+		0AB346752717266C00806633 /* DecisionMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionMatrixView.swift; sourceTree = "<group>"; };
+		0AB34677271727CC00806633 /* AppearancePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancePreviews.swift; sourceTree = "<group>"; };
 		0AB7622827144E3D00DA06A8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0AB7622D271456FC00DA06A8 /* DecisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionCell.swift; sourceTree = "<group>"; };
 		0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDecisionView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB3466A2715A10B00806633 /* RealmSwift in Frameworks */,
+				0AB346682715A10B00806633 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				0A779CD62710D9E000026A86 /* Preview Assets.xcassets */,
+				0AB34677271727CC00806633 /* AppearancePreviews.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 				0A2CB5B62714A97D003A4960 /* ActionArea */,
 				0AB7622A271456BE00DA06A8 /* Decision Matrix */,
 				0A2CB5B227149719003A4960 /* CardView.swift */,
+				0AB346712715E94400806633 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,14 +135,12 @@
 		0A779CDE2710DA1D00026A86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0AB3466D2715B43400806633 /* Defaults.swift */,
 				0AB7622827144E3D00DA06A8 /* Card.swift */,
 				0A779CE32710DB6D00026A86 /* CardValue.swift */,
-				0A779CE72710E4F200026A86 /* Hand.swift */,
 				0A779CE12710DADA00026A86 /* Action.swift */,
 				0A779CDF2710DA7200026A86 /* Decision.swift */,
-				0A779CE52710DDA600026A86 /* SplitDecisions.swift */,
-				0AB3465C2714D76600806633 /* SoftDecisions.swift */,
-				0AB346602714E5AD00806633 /* DeafultDecision.swift */,
+				0AB3466F2715B6B800806633 /* Decisions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,9 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				0AB7622D271456FC00DA06A8 /* DecisionCell.swift */,
+				0AB346732715EEB000806633 /* EditDecisionCell.swift */,
 				0A2CB5AE27148832003A4960 /* CardValueLabel.swift */,
 				0AB34664271580D000806633 /* HandValueLabel.swift */,
-				0A2CB5B027148B7D003A4960 /* y-axis-label.swift */,
+				0AB346752717266C00806633 /* DecisionMatrixView.swift */,
 				0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */,
 				0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */,
 				0AB3466227157DDB00806633 /* DefaultDecisionView.swift */,
@@ -169,6 +176,10 @@
 			dependencies = (
 			);
 			name = "Black Jack Trainer";
+			packageProductDependencies = (
+				0AB346672715A10B00806633 /* Realm */,
+				0AB346692715A10B00806633 /* RealmSwift */,
+			);
 			productName = "Black Jack Trainer";
 			productReference = 0A779CCC2710D9DE00026A86 /* Black Jack Trainer.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 0A779CC32710D9DE00026A86;
+			packageReferences = (
+				0AB346662715A10B00806633 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 0A779CCD2710D9DE00026A86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -224,25 +238,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2CB5AF27148832003A4960 /* CardValueLabel.swift in Sources */,
-				0A2CB5B127148B7D003A4960 /* y-axis-label.swift in Sources */,
 				0A779CD22710D9DE00026A86 /* ContentView.swift in Sources */,
+				0AB346762717266D00806633 /* DecisionMatrixView.swift in Sources */,
+				0AB346702715B6B800806633 /* Decisions.swift in Sources */,
 				0A779CE22710DADA00026A86 /* Action.swift in Sources */,
-				0A779CE62710DDA600026A86 /* SplitDecisions.swift in Sources */,
+				0AB346742715EEB000806633 /* EditDecisionCell.swift in Sources */,
 				0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */,
 				0AB7622E271456FC00DA06A8 /* DecisionCell.swift in Sources */,
 				0AB34665271580D000806633 /* HandValueLabel.swift in Sources */,
-				0AB346612714E5AD00806633 /* DeafultDecision.swift in Sources */,
 				0A2CB5B327149719003A4960 /* CardView.swift in Sources */,
-				0A779CE82710E4F200026A86 /* Hand.swift in Sources */,
 				0A779CD02710D9DE00026A86 /* Black_Jack_TrainerApp.swift in Sources */,
-				0AB3465D2714D76600806633 /* SoftDecisions.swift in Sources */,
 				0A779CE02710DA7200026A86 /* Decision.swift in Sources */,
 				0A2CB5B82714A9A0003A4960 /* ActionAreaView.swift in Sources */,
 				0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */,
 				0A2CB5B52714A545003A4960 /* PracticeView.swift in Sources */,
 				0AB7622927144E3D00DA06A8 /* Card.swift in Sources */,
+				0AB3466E2715B43400806633 /* Defaults.swift in Sources */,
 				0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */,
 				0AB762302714606700DA06A8 /* SplitDecisionView.swift in Sources */,
+				0AB34678271727CD00806633 /* AppearancePreviews.swift in Sources */,
+				0AB346722715E94400806633 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +462,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0AB346662715A10B00806633 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AB346672715A10B00806633 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AB346662715A10B00806633 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0AB346692715A10B00806633 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AB346662715A10B00806633 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A779CC42710D9DE00026A86 /* Project object */;
 }

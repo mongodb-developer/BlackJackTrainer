@@ -14,6 +14,7 @@ struct ActionAreaView: View {
     
     var body: some View {
         HStack {
+            Spacer()
             VStack(alignment: .center) {
                 Text("Dealer")
                     .font(.title)
@@ -29,16 +30,16 @@ struct ActionAreaView: View {
             }
             Spacer()
             VStack {
-                Button(action: draw) {
-                    Text("Draw")
+                Button(action: deal) {
+                    Text("Deal")
                 }
                     .buttonStyle(.borderedProminent)
             }
         }
-        .onAppear(perform: draw)
+        .onAppear(perform: deal)
     }
     
-    private func draw() {
+    private func deal() {
         card1.shuffle()
         card2 .shuffle()
         dealerCard.shuffle()

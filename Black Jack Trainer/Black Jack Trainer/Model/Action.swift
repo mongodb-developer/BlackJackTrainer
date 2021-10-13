@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum Action {
-    case stand
-    case hit
-    case double
-    case split
+enum Action: Int, PersistableEnum {
+    case stand = 0
+    case hit = 1
+    case double = 2
+    case split = 3
 }

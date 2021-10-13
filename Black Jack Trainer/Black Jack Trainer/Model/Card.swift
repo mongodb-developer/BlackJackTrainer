@@ -14,14 +14,6 @@ enum Suit: Int, CaseIterable {
     case club = 3
     case spade = 4
     
-//    static var random: Suit { Suit.allCases.randomElement() }
-    
-//    static var random: Suit {
-//        let randomInt = Int.random(in: 1..<5)
-//        let rand = Suit.random
-//        return Suit(rawValue: randomInt) ?? .spade
-//    }
-    
     init(_ suit: Suit) {
         self = suit
     }
@@ -63,15 +55,6 @@ enum Face: Int, CaseIterable {
     case jack = 11
     case queen = 12
     case king = 13
-    
-//    static var random: Face {
-//        let randomInt = Int.random(in: 1..<14)
-//        return Face(rawValue: randomInt) ?? .ace
-//    }
-    
-    init(_ face: Face) {
-        self = face
-    }
     
     var string: String {
         switch self {
@@ -128,9 +111,13 @@ class Card: ObservableObject {
         face = card.face
     }
     
-    convenience init (suit: Suit, face: Face) {
+    convenience init(suit: Suit) {
         self.init()
         self.suit = suit
+    }
+    
+    convenience init(face: Face) {
+        self.init()
         self.face = face
     }
     

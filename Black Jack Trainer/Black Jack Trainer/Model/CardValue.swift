@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-enum CardValue: Int, CaseIterable, Identifiable {
+enum CardValue: Int, CaseIterable, Identifiable, PersistableEnum {
     case two = 2
     case three = 3
     case four = 4
@@ -18,7 +19,6 @@ enum CardValue: Int, CaseIterable, Identifiable {
     case nine = 9
     case ten = 10
     case ace = 11
-//    case joker = 12
     
     var index: Int { self.rawValue - 2 }
     var id: Int { self.rawValue }
@@ -32,7 +32,4 @@ enum CardValue: Int, CaseIterable, Identifiable {
 
         }
     }
-    
-    static func valueToIndex(_ value: CardValue) -> Int { value.rawValue - 2 }
-    static func indexToValue(_ index: Int) -> CardValue { CardValue(rawValue: index + 2) ?? .ace }
 }
