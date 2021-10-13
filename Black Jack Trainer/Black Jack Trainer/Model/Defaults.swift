@@ -7,8 +7,11 @@
 
 import Foundation
 
-let cellHeight = 18.0
-let cellWidth = 35.0
+let cellHeight = 17.0
+let cellWidth = 34.0
+let extraCellHeight = 3.0
+let extraCellWidth = 2.0
+
 
 let defaultSoftDecisions = [
         [

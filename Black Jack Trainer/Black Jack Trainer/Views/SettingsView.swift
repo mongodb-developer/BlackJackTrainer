@@ -46,15 +46,7 @@ struct SettingsView: View {
                     }
                     HStack {
                         Spacer()
-                        Button("Reset All Matrices") { isConfirming = true }
-                        .buttonStyle(.bordered)
-                        .confirmationDialog("Are you sure reset all of the decision matrices to their defaults",
-                                            isPresented: $isConfirming) {
-                            Button("Confirm Reset", role: .destructive) {
-                                Decisions.bootstrapDecisions()
-                            }
-                            Button("Cancel", role: .cancel) {}
-                        }
+                        ResetButton(label: "Reset All Matrices", resetType: .all)
                         Spacer()
                     }
                     .padding()

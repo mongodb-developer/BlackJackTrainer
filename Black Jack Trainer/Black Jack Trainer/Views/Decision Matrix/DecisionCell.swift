@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DecisionCell: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    
     let decision: Decision
     let myHandValue: Int
     let dealerCardValue: CardValue
@@ -17,7 +20,8 @@ struct DecisionCell: View {
             .font(.caption)
             .foregroundColor((myHandValue == decision.handValue || dealerCardValue == decision.dealerCardValue) ? .black  : .gray)
             .fontWeight((myHandValue == decision.handValue && dealerCardValue == decision.dealerCardValue) ? .bold : .light)
-            .frame(width: cellWidth, height: cellHeight, alignment: .center)
+            .frame(width: cellWidth + (horizontalSizeClass == .regular ? extraCellWidth : 0),
+                   height: cellHeight + (verticalSizeClass == .regular ? extraCellHeight : 0), alignment: .center)
             .background(decision.actionColor)
             .border(.black, width: myHandValue == decision.handValue && dealerCardValue == decision.dealerCardValue ? 2 : 0)
     }

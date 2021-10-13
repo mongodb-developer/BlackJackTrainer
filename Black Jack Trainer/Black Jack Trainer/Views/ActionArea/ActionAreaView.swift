@@ -34,6 +34,7 @@ struct ActionAreaView: View {
                     Text("Deal")
                 }
                     .buttonStyle(.borderedProminent)
+                    .frame(minWidth: 60)
             }
         }
         .onAppear(perform: deal)

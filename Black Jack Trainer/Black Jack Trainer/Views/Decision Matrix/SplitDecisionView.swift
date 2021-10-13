@@ -48,6 +48,10 @@ struct SplitDecisionView: View {
                         }
                     }
                 }
+                if editable {
+                    ResetButton(label: "Reset Split Matrix", resetType: .split)
+                        .padding(.top, 20)
+                }
                 Spacer()
             }
             .padding([.trailing, .top])
@@ -55,14 +59,6 @@ struct SplitDecisionView: View {
         }
     }
 }
-
-//struct SplitDecisionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            SplitDecisionView()
-//        }
-//    }
-//}
 
 struct SplitDecisionView_Previews: PreviewProvider {
     static var previews: some View {

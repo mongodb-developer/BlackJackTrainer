@@ -48,6 +48,10 @@ struct DefaultDecisionView: View {
                         }
                     }
                 }
+                if editable {
+                    ResetButton(label: "Reset Standard Matrix", resetType: .regular)
+                        .padding(.top, 20)
+                }
                 Spacer()
             }
             .padding([.trailing, .top])
@@ -61,6 +65,9 @@ struct DefaultDecisionView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine)
+        return Group {
+            DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine)
+            DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine, editable: true)
+        }
     }
 }

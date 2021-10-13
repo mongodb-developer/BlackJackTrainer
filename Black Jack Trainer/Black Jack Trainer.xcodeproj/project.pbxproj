@@ -18,6 +18,7 @@
 		0A779CE02710DA7200026A86 /* Decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CDF2710DA7200026A86 /* Decision.swift */; };
 		0A779CE22710DADA00026A86 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE12710DADA00026A86 /* Action.swift */; };
 		0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE32710DB6D00026A86 /* CardValue.swift */; };
+		0A7E38022717952F00B25F6C /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E38012717952F00B25F6C /* ResetButton.swift */; };
 		0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */; };
 		0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466227157DDB00806633 /* DefaultDecisionView.swift */; };
 		0AB34665271580D000806633 /* HandValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB34664271580D000806633 /* HandValueLabel.swift */; };
@@ -47,6 +48,7 @@
 		0A779CDF2710DA7200026A86 /* Decision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decision.swift; sourceTree = "<group>"; };
 		0A779CE12710DADA00026A86 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		0A779CE32710DB6D00026A86 /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
+		0A7E38012717952F00B25F6C /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
 		0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDecisionView.swift; sourceTree = "<group>"; };
 		0AB3466227157DDB00806633 /* DefaultDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecisionView.swift; sourceTree = "<group>"; };
 		0AB34664271580D000806633 /* HandValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandValueLabel.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				0AB7622F2714606700DA06A8 /* SplitDecisionView.swift */,
 				0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */,
 				0AB3466227157DDB00806633 /* DefaultDecisionView.swift */,
+				0A7E38012717952F00B25F6C /* ResetButton.swift */,
 			);
 			path = "Decision Matrix";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				0A2CB5B82714A9A0003A4960 /* ActionAreaView.swift in Sources */,
 				0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */,
 				0A2CB5B52714A545003A4960 /* PracticeView.swift in Sources */,
+				0A7E38022717952F00B25F6C /* ResetButton.swift in Sources */,
 				0AB7622927144E3D00DA06A8 /* Card.swift in Sources */,
 				0AB3466E2715B43400806633 /* Defaults.swift in Sources */,
 				0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */,
