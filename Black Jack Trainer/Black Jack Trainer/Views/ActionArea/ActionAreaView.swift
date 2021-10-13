@@ -14,6 +14,7 @@ struct ActionAreaView: View {
     
     var body: some View {
         HStack {
+            Spacer()
             VStack(alignment: .center) {
                 Text("Dealer")
                     .font(.title)

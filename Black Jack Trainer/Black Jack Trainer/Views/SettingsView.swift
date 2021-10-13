@@ -14,60 +14,63 @@ struct SettingsView: View {
     @State private var isConfirming = false
     
     var body: some View {
-        Form {
-            Section(header: Text("Edit Decision Matrices")) {
-                Button(action: { showingSoftMatrix.toggle() }) {
-                    HStack {
-                        Text("Soft Hand Decisions")
-                            .foregroundColor(.primary)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                    }
-                }
-                Button(action: { showingSplitMatrix.toggle() }) {
-                    HStack {
-                        Text("Split Hand Decisions")
-                            .foregroundColor(.primary)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                    }
-                }
-                Button(action: { showingDefaultMatrix.toggle() }) {
-                    HStack {
-                        Text("Regular Hand Decisions")
-                            .foregroundColor(.primary)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                    }
-                }
-                HStack {
-                    Spacer()
-                    Button("Reset All Matrices") { isConfirming = true }
-                    .buttonStyle(.bordered)
-                    .confirmationDialog("Are you sure reset all of the decision matrices to their defaults",
-                                        isPresented: $isConfirming) {
-                        Button("Confirm Reset", role: .destructive) {
-                            Decisions.bootstrapDecisions()
+            Form {
+                Text("Setting")
+                Section(header: Text("Edit Decision Matrices")) {
+                    Button(action: { showingSoftMatrix.toggle() }) {
+                        HStack {
+                            Text("Soft Hand Decisions")
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
                         }
-                        Button("Cancel", role: .cancel) {}
                     }
-                    Spacer()
+                    Button(action: { showingSplitMatrix.toggle() }) {
+                        HStack {
+                            Text("Split Hand Decisions")
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    Button(action: { showingDefaultMatrix.toggle() }) {
+                        HStack {
+                            Text("Regular Hand Decisions")
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        Button("Reset All Matrices") { isConfirming = true }
+                        .buttonStyle(.bordered)
+                        .confirmationDialog("Are you sure reset all of the decision matrices to their defaults",
+                                            isPresented: $isConfirming) {
+                            Button("Confirm Reset", role: .destructive) {
+                                Decisions.bootstrapDecisions()
+                            }
+                            Button("Cancel", role: .cancel) {}
+                        }
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
             }
-        }
         .navigationBarTitle("Settings", displayMode: .inline)
-        NavigationLink(destination: SoftDecisionView(editable: true), isActive: $showingSoftMatrix) {
-            EmptyView()
-        }
-        NavigationLink(destination: SplitDecisionView(editable: true), isActive: $showingSplitMatrix) {
-            EmptyView()
-        }
-        NavigationLink(destination: DefaultDecisionView(editable: true), isActive: $showingDefaultMatrix) {
-            EmptyView()
+        Group {
+            NavigationLink(destination: SoftDecisionView(editable: true), isActive: $showingSoftMatrix) {
+                EmptyView()
+            }
+            NavigationLink(destination: SplitDecisionView(editable: true), isActive: $showingSplitMatrix) {
+                EmptyView()
+            }
+            NavigationLink(destination: DefaultDecisionView(editable: true), isActive: $showingDefaultMatrix) {
+                EmptyView()
+            }
         }
     }
 }

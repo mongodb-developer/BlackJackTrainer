@@ -15,35 +15,31 @@ struct SplitDecisionView: View {
     var dealerCardValue: CardValue? = nil
     var editable = false
     
-    let elements = 11.0
-    let width = 35.0
-    
     var body: some View {
         if let decisions = decisions.first {
             VStack {
                 HStack(spacing: 0) {
                     VStack(spacing: 0) {
                         HStack(spacing: 0) {
-                            CardValueLabel(width: width)
+                            CardValueLabel()
                             ForEach(CardValue.allCases) { valueLabel in
-                                CardValueLabel(cardValue: valueLabel, width: width)
+                                CardValueLabel(cardValue: valueLabel)
                             }
                         }
                         VStack(spacing: 0) {
                             ForEach(CardValue.allCases.reversed()) { cardValue in
                                 HStack(spacing: 0) {
-                                    CardValueLabel(cardValue: cardValue, width: width)
+                                    CardValueLabel(cardValue: cardValue)
                                     ForEach(CardValue.allCases) { thisDealerCardValue in
                                         let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
                                         if editable {
-                                            EditDecisionCell(decision: decision, width: width)
+                                            EditDecisionCell(decision: decision)
                                         } else {
                                             if let myHandValue = myHandValue, let dealerCardValue = dealerCardValue {
                                                 DecisionCell(
                                                     decision: decision,
                                                     myHandValue: myHandValue,
-                                                    dealerCardValue: dealerCardValue,
-                                                    width: width)
+                                                    dealerCardValue: dealerCardValue)
                                             }
                                         }
                                     }
@@ -60,9 +56,21 @@ struct SplitDecisionView: View {
     }
 }
 
+//struct SplitDecisionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            SplitDecisionView()
+//        }
+//    }
+//}
+
 struct SplitDecisionView_Previews: PreviewProvider {
     static var previews: some View {
-        SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
-            .padding(0)
+        if !Decisions.areDecisionsPopulated {
+            Decisions.bootstrapDecisions()
+        }
+        return NavigationView {
+            SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
+        }
     }
 }

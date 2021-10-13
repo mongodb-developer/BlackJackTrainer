@@ -68,6 +68,10 @@ extension Decisions {
             let softDecisions = Decisions()
             let splitDecisions = Decisions()
             
+            try realm.write {
+                realm.delete(realm.objects(Decision.self))
+                realm.delete(realm.objects(Decisions.self))
+            }
             defaultDecisions.bootstrap(defaults: defaultDefaultDecisions, handType: .normal)
             softDecisions.bootstrap(defaults: defaultSoftDecisions, handType: .soft)
             splitDecisions.bootstrap(defaults: defaultSplitDecisions, handType: .split)

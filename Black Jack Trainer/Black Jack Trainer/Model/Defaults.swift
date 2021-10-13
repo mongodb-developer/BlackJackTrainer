@@ -7,6 +7,9 @@
 
 import Foundation
 
+let cellHeight = 18.0
+let cellWidth = 35.0
+
 let defaultSoftDecisions = [
         [
              Decision(handValue: 2, dealerCardValue: .two, action: .hit),

@@ -21,16 +21,27 @@ struct CardView: View {
                 .frame(width: 30, height: 30, alignment: .center)
         }
         .foregroundColor(card.suit.color)
+        // TODO: for article
+        .padding(8)
+        .background(.white)
     }
 }
 
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VStack {
-//            CardView(card: Card(suit: .heart, face: .ace))
-//            CardView(card: Card(suit: .club, face: .queen))
-//            CardView(card: Card(suit: .diamond, face: .two))
-//            CardView(card: Card(suit: .spade, face: .ten))
-//        }
-//    }
-//}
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            VStack {
+                ForEach(Suit.allCases, id: \.rawValue) { suit in
+                    CardView(card: Card(suit: suit))
+                }
+            }
+            VStack {
+                ForEach(Suit.allCases, id: \.rawValue) { suit in
+                    CardView(card: Card(suit: suit))
+                }
+            }
+            // TODO: for article
+            .preferredColorScheme(.dark)
+        }
+    }
+}

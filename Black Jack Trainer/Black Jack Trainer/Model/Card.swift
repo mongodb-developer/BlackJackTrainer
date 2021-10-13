@@ -111,6 +111,16 @@ class Card: ObservableObject {
         face = card.face
     }
     
+    convenience init(suit: Suit) {
+        self.init()
+        self.suit = suit
+    }
+    
+    convenience init(face: Face) {
+        self.init()
+        self.face = face
+    }
+    
     func shuffle() {
         suit = Suit.allCases.randomElement() ?? .spade
         face = Face.allCases.randomElement() ?? .ace

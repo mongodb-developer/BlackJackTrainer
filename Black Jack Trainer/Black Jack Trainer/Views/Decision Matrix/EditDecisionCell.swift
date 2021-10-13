@@ -10,13 +10,12 @@ import RealmSwift
 
 struct EditDecisionCell: View {
     @ObservedRealmObject var decision: Decision
-    let width: Double
     
     var body: some View {
         Button(action: advance) {
             Text(decision.actionString)
                 .font(.caption)
-                .frame(width: width, height: 20, alignment: .center)
+                .frame(width: cellWidth, height: cellHeight, alignment: .center)
                 .background(decision.actionColor)
                 .foregroundColor(.primary)
         }
@@ -46,7 +45,7 @@ struct EditDecisionCell_Previews: PreviewProvider {
         ]
         HStack (spacing: 0) {
             ForEach(decisions) { decision in
-                EditDecisionCell(decision: decision, width: 30)
+                EditDecisionCell(decision: decision)
             }
         }
     }
