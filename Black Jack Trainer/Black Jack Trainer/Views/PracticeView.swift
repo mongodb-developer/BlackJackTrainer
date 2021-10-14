@@ -50,24 +50,31 @@ struct PracticeView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return Group {
-            NavigationView {
-                PracticeView()
-            }
-            NavigationView {
-                PracticeView()
-            }
-            .preferredColorScheme(.dark)
-            NavigationView {
-                PracticeView()
-            }
-            .previewInterfaceOrientation(.landscapeRight)
-            NavigationView {
-                PracticeView()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
-            .previewInterfaceOrientation(.landscapeRight)
-        }
+        return _PreviewOrientation(
+            _PreviewColorScheme(
+                NavigationView {
+                    PracticeView()
+                }
+            )
+        )
+//        return Group {
+//            NavigationView {
+//                PracticeView()
+//            }
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .preferredColorScheme(.dark)
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .previewInterfaceOrientation(.landscapeRight)
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .navigationViewStyle(StackNavigationViewStyle())
+//            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
+//            .previewInterfaceOrientation(.landscapeRight)
+//        }
     }
 }

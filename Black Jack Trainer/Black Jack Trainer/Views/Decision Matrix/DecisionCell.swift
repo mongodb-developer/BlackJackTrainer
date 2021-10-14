@@ -35,15 +35,19 @@ struct DecisionCell_Previews: PreviewProvider {
             Decision(handValue: 6, dealerCardValue: .nine, action: .double),
             Decision(handValue: 6, dealerCardValue: .nine, action: .hit)
         ]
-        return VStack(spacing: 0) {
-            ForEach(decisions) { decision in
-                HStack (spacing: 0) {
-                    DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .three)
-                    DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .three)
-                    DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .nine)
-                    DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .nine)
+        return _PreviewColorScheme(
+            VStack(spacing: 0) {
+                ForEach(decisions) { decision in
+                    HStack (spacing: 0) {
+                        DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .three)
+                        DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .three)
+                        DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .nine)
+                        DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .nine)
+                    }
                 }
             }
-        }
+                .previewLayout(.sizeThatFits)
+                .padding()
+        )
     }
 }
