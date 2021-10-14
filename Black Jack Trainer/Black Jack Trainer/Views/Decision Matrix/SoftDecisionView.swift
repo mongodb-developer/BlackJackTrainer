@@ -50,6 +50,10 @@ struct SoftDecisionView: View {
                         }
                     }
                 }
+                if editable {
+                    ResetButton(label: "Reset Soft Matrix", resetType: .soft)
+                        .padding(.top, 20)
+                }
                 Spacer()
             }
             .padding([.trailing, .top])

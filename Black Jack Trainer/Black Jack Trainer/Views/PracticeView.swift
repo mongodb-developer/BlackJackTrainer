@@ -18,17 +18,14 @@ struct PracticeView: View {
     
     var body: some View {
         Group {
-            if horizontalSizeClass == .compact && verticalSizeClass == .regular {
-                // iPhone Portrait
+            if verticalSizeClass == .regular {
                 VStack {
                     DecisionMatrixView(card1: card1, card2: card2, dealerCard: dealerCard)
                     Spacer()
                     ActionAreaView(card1: card1, card2: card2, dealerCard: dealerCard)
                         .padding()
                 }
-            }
-            if horizontalSizeClass == .compact && verticalSizeClass == .compact {
-                // iPhone Landscape
+            } else {
                 HStack {
                     DecisionMatrixView(card1: card1, card2: card2, dealerCard: dealerCard)
                     Spacer()
@@ -36,21 +33,11 @@ struct PracticeView: View {
                         .padding()
                 }
             }
-            if horizontalSizeClass == .regular && verticalSizeClass == .regular {
-                // iPad
-                VStack {
-                    DecisionMatrixView(card1: card1, card2: card2, dealerCard: dealerCard)
-                    Spacer()
-                    HStack {
-                        ActionAreaView(card1: card1, card2: card2, dealerCard: dealerCard)
-                            .padding()
-                    }
-                }
-            }
             NavigationLink(destination: SettingsView(), isActive: $showingSettings) {
                 EmptyView()
             }
         }
+        .onAppear { print("refresh") }
         .navigationBarItems(trailing: Button(action: { showingSettings.toggle() }) {
             Image(systemName: "gear")
                 .foregroundColor(.primary)
@@ -63,24 +50,31 @@ struct PracticeView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return Group {
-            NavigationView {
-                PracticeView()
-            }
-            NavigationView {
-                PracticeView()
-            }
-            .preferredColorScheme(.dark)
-            NavigationView {
-                PracticeView()
-            }
-            .previewInterfaceOrientation(.landscapeRight)
-            NavigationView {
-                PracticeView()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
-            .previewInterfaceOrientation(.landscapeRight)
-        }
+        return _PreviewOrientation(
+            _PreviewColorScheme(
+                NavigationView {
+                    PracticeView()
+                }
+            )
+        )
+//        return Group {
+//            NavigationView {
+//                PracticeView()
+//            }
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .preferredColorScheme(.dark)
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .previewInterfaceOrientation(.landscapeRight)
+//            NavigationView {
+//                PracticeView()
+//            }
+//            .navigationViewStyle(StackNavigationViewStyle())
+//            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
+//            .previewInterfaceOrientation(.landscapeRight)
+//        }
     }
 }

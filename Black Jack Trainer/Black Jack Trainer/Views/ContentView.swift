@@ -12,15 +12,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             PracticeView()
-                .onAppear(perform: bootstrapDecisions)
+                .onAppear(perform: bootstrap)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    private func bootstrapDecisions() {
+    private func bootstrap() {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
+        Settings.initSettings()
     }
 }
 
