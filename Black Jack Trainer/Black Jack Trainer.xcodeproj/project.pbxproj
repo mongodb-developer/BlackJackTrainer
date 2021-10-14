@@ -19,6 +19,8 @@
 		0A779CE22710DADA00026A86 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE12710DADA00026A86 /* Action.swift */; };
 		0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779CE32710DB6D00026A86 /* CardValue.swift */; };
 		0A7E38022717952F00B25F6C /* ResetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E38012717952F00B25F6C /* ResetButton.swift */; };
+		0A7E380427180E5400B25F6C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E380327180E5300B25F6C /* Settings.swift */; };
+		0A7E3807271819B900B25F6C /* TypeOfHandsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E3806271819B900B25F6C /* TypeOfHandsSelector.swift */; };
 		0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */; };
 		0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466227157DDB00806633 /* DefaultDecisionView.swift */; };
 		0AB34665271580D000806633 /* HandValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB34664271580D000806633 /* HandValueLabel.swift */; };
@@ -49,6 +51,8 @@
 		0A779CE12710DADA00026A86 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		0A779CE32710DB6D00026A86 /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
 		0A7E38012717952F00B25F6C /* ResetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButton.swift; sourceTree = "<group>"; };
+		0A7E380327180E5300B25F6C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0A7E3806271819B900B25F6C /* TypeOfHandsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfHandsSelector.swift; sourceTree = "<group>"; };
 		0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDecisionView.swift; sourceTree = "<group>"; };
 		0AB3466227157DDB00806633 /* DefaultDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecisionView.swift; sourceTree = "<group>"; };
 		0AB34664271580D000806633 /* HandValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandValueLabel.swift; sourceTree = "<group>"; };
@@ -128,8 +132,8 @@
 				0A2CB5B42714A545003A4960 /* PracticeView.swift */,
 				0A2CB5B62714A97D003A4960 /* ActionArea */,
 				0AB7622A271456BE00DA06A8 /* Decision Matrix */,
+				0A7E38052718196A00B25F6C /* Settings */,
 				0A2CB5B227149719003A4960 /* CardView.swift */,
-				0AB346712715E94400806633 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,8 +147,18 @@
 				0A779CE12710DADA00026A86 /* Action.swift */,
 				0A779CDF2710DA7200026A86 /* Decision.swift */,
 				0AB3466F2715B6B800806633 /* Decisions.swift */,
+				0A7E380327180E5300B25F6C /* Settings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0A7E38052718196A00B25F6C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0AB346712715E94400806633 /* SettingsView.swift */,
+				0A7E3806271819B900B25F6C /* TypeOfHandsSelector.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		0AB7622A271456BE00DA06A8 /* Decision Matrix */ = {
@@ -248,7 +262,9 @@
 				0AB346742715EEB000806633 /* EditDecisionCell.swift in Sources */,
 				0A779CE42710DB6D00026A86 /* CardValue.swift in Sources */,
 				0AB7622E271456FC00DA06A8 /* DecisionCell.swift in Sources */,
+				0A7E380427180E5400B25F6C /* Settings.swift in Sources */,
 				0AB34665271580D000806633 /* HandValueLabel.swift in Sources */,
+				0A7E3807271819B900B25F6C /* TypeOfHandsSelector.swift in Sources */,
 				0A2CB5B327149719003A4960 /* CardView.swift in Sources */,
 				0A779CD02710D9DE00026A86 /* Black_Jack_TrainerApp.swift in Sources */,
 				0A779CE02710DA7200026A86 /* Decision.swift in Sources */,

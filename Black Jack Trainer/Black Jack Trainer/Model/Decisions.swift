@@ -27,7 +27,6 @@ enum HandType: Int, PersistableEnum {
 
 class Decisions: Object, ObjectKeyIdentifiable {
     @Persisted var decisions = List<DecisionList>()
-    //    @Persisted var handType = HandType.normal
     @Persisted var isSoft = false
     @Persisted var isSplit = false
     
@@ -85,7 +84,6 @@ extension Decisions {
     
     static func reset(defaults: [[Decision]], handType: HandType) {
         let indexOffset = handType == .normal ? 5 : 2
-//        print("Reset, handType: \(handType.rawValue)")
         do {
             let realm = try Realm()
             let realmDecisions = realm.objects(Decisions.self).filter(NSPredicate(
@@ -94,10 +92,8 @@ extension Decisions {
                 realmDecisions.forEach() { decisions in
                     decisions.decisions.forEach() { decisionsList in
                         decisionsList.decisions.forEach() { decision in
-//                            if decision.handValue - indexOffset == 00 && decision.dealerCardValue.index == 0 {
-//                                print("Corner Realm value = \(decision.action.rawValue), default value = \(defaults[decision.handValue - indexOffset][decision.dealerCardValue.index].action.rawValue)")
-//                            }
                             if decision.action != defaults[decision.handValue - indexOffset][decision.dealerCardValue.index].action {
+                                // TODO: Why does this only work when the print statements are there?
                                 print("\(decision.handValue - indexOffset), \(decision.dealerCardValue.index)")
                                 print("Changing action from \(decision.action.rawValue) to \(defaults[decision.handValue - indexOffset][decision.dealerCardValue.index].action.rawValue)")
                                 decision.action = defaults[decision.handValue - indexOffset][decision.dealerCardValue.index].action

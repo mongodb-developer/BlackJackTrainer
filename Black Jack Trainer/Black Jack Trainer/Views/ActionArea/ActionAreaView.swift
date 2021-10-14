@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ActionAreaView: View {
+    @ObservedResults(Settings.self) var settings
+    
     @ObservedObject var card1: Card
     @ObservedObject var card2: Card
     @ObservedObject var dealerCard: Card
@@ -44,6 +47,34 @@ struct ActionAreaView: View {
         card1.shuffle()
         card2 .shuffle()
         dealerCard.shuffle()
+        if let mySettings = settings.first {
+            switch mySettings.typesOfHand {
+            case .soft:
+                card1.face = .ace
+            case .split:
+                card1.face = card2.face
+            case .other:
+                [card1, card2].forEach() { card in
+                    if card.face == .ace {
+                        card.face = Face(rawValue: Int.random(in: Face.two.rawValue...Face.king.rawValue)) ?? .seven
+                    }
+                }
+                if card1.face.value == card2.face.value {
+                    if card1.face.value == .ten {
+                        card1.face = Face(rawValue: Int.random(in: Face.two.rawValue...Face.nine.rawValue)) ?? .seven
+                    } else {
+                        if card2.face == .nine {
+                            card2.face = .two
+                        } else {
+                            card2.face = Face(rawValue: card2.face.value.rawValue + 1) ?? .seven
+                        }
+                    }
+                }
+                
+            default:
+                return
+            }
+        }
     }
 }
 

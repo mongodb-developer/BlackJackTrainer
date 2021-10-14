@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SettingsView: View {
+    @ObservedResults(Settings.self) var settings
+    
     @State private var showingDefaultMatrix = false
     @State private var showingSplitMatrix = false
     @State private var showingSoftMatrix = false
@@ -15,7 +18,6 @@ struct SettingsView: View {
     
     var body: some View {
             Form {
-                Text("Setting")
                 Section(header: Text("Edit Decision Matrices")) {
                     Button(action: { showingSoftMatrix.toggle() }) {
                         HStack {
@@ -51,6 +53,11 @@ struct SettingsView: View {
                     }
                     .padding()
                 }
+                if let settings = settings.first {
+                    Section(header: Text("What types of card")) {
+                        TypeOfHandsSelector(settings: settings)
+                    }
+                }
             }
         .navigationBarTitle("Settings", displayMode: .inline)
         Group {
@@ -69,7 +76,8 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        Settings.initSettings()
+        return NavigationView {
             SettingsView()
         }
     }
