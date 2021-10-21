@@ -11,7 +11,15 @@ struct CardValueLabel: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     
-    var cardValue: CardValue? = nil
+    var cardValue: CardValue?
+    
+    init(_ cardValue: CardValue) {
+        self.cardValue = cardValue
+    }
+    
+    init() {
+        cardValue = nil
+    }
     
     var body: some View {
         Text(cardValue?.asString ?? "")
@@ -22,10 +30,15 @@ struct CardValueLabel: View {
 
 struct CardValueLabel_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 0) {
-            ForEach(CardValue.allCases.reversed()) {
-                CardValueLabel(cardValue: $0)
-            }
-        }
+        _PreviewNoDevice(
+            _PreviewColorScheme(
+                VStack(spacing: 0) {
+                    ForEach(CardValue.allCases.reversed()) {
+                        CardValueLabel($0)
+                    }
+                }
+            )
+        )
+        
     }
 }

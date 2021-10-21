@@ -37,11 +37,13 @@ struct DecisionMatrixView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return AppearancePreviews(
-            NavigationView {
-                DecisionMatrixView(card1: Card(), card2: Card(), dealerCard: Card())
-            }
+        return _PreviewOrientation (
+            _PreviewColorScheme(
+                NavigationView {
+                    DecisionMatrixView(card1: Card(), card2: Card(), dealerCard: Card())
+                }
+                    .navigationViewStyle(StackNavigationViewStyle())
+            )
         )
     }
 }
-

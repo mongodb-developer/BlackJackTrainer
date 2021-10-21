@@ -23,14 +23,14 @@ struct SoftDecisionView: View {
                         HStack(spacing: 0) {
                             CardValueLabel()
                             ForEach(CardValue.allCases) { valueLabel in
-                                CardValueLabel(cardValue: valueLabel)
+                                CardValueLabel(valueLabel)
                             }
                         }
                         VStack(spacing: 0) {
                             ForEach(CardValue.allCases.reversed()) { cardValue in
                                 if cardValue != .ace {
                                     HStack(spacing: 0) {
-                                        CardValueLabel(cardValue: cardValue)
+                                        CardValueLabel(cardValue)
                                         ForEach(CardValue.allCases) { thisDealerCardValue in
                                             let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
                                             if editable {
@@ -67,6 +67,18 @@ struct SoftDecisionView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return SoftDecisionView(myHandValue: 6, dealerCardValue: .nine)
+        return _PreviewOrientation(
+            _PreviewColorScheme(
+                Group {
+                    NavigationView {
+                        SoftDecisionView(myHandValue: 6, dealerCardValue: .nine)
+                    }
+                    NavigationView {
+                        SoftDecisionView(myHandValue: 6, dealerCardValue: .nine, editable: true)
+                    }
+                }
+                    .navigationViewStyle(StackNavigationViewStyle())
+            )
+        )
     }
 }

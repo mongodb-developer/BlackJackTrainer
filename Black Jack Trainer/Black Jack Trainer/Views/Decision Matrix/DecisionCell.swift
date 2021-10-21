@@ -23,7 +23,7 @@ struct DecisionCell: View {
             .frame(width: cellWidth + (horizontalSizeClass == .regular ? extraCellWidth : 0),
                    height: cellHeight + (verticalSizeClass == .regular ? extraCellHeight : 0), alignment: .center)
             .background(decision.actionColor)
-            .border(.black, width: myHandValue == decision.handValue && dealerCardValue == decision.dealerCardValue ? 2 : 0)
+            .border(.primary, width: myHandValue == decision.handValue && dealerCardValue == decision.dealerCardValue ? 2 : 0)
     }
 }
 
@@ -36,18 +36,18 @@ struct DecisionCell_Previews: PreviewProvider {
             Decision(handValue: 6, dealerCardValue: .nine, action: .hit)
         ]
         return _PreviewColorScheme(
-            VStack(spacing: 0) {
-                ForEach(decisions) { decision in
-                    HStack (spacing: 0) {
-                        DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .three)
-                        DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .three)
-                        DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .nine)
-                        DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .nine)
+            _PreviewNoDevice(
+                VStack(spacing: 0) {
+                    ForEach(decisions) { decision in
+                        HStack (spacing: 0) {
+                            DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .three)
+                            DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .three)
+                            DecisionCell(decision: decision, myHandValue: 8, dealerCardValue: .nine)
+                            DecisionCell(decision: decision, myHandValue: 6, dealerCardValue: .nine)
+                        }
                     }
                 }
-            }
-                .previewLayout(.sizeThatFits)
-                .padding()
+            )
         )
     }
 }

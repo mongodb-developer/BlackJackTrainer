@@ -57,24 +57,5 @@ struct PracticeView_Previews: PreviewProvider {
                 }
             )
         )
-//        return Group {
-//            NavigationView {
-//                PracticeView()
-//            }
-//            NavigationView {
-//                PracticeView()
-//            }
-//            .preferredColorScheme(.dark)
-//            NavigationView {
-//                PracticeView()
-//            }
-//            .previewInterfaceOrientation(.landscapeRight)
-//            NavigationView {
-//                PracticeView()
-//            }
-//            .navigationViewStyle(StackNavigationViewStyle())
-//            .previewDevice(PreviewDevice(rawValue: "iPad (9th generation)"))
-//            .previewInterfaceOrientation(.landscapeRight)
-//        }
     }
 }

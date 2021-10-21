@@ -27,12 +27,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-            ContentView()
-                .preferredColorScheme(.dark)
-            ContentView()
-                .previewInterfaceOrientation(.landscapeRight)
-        }
+        _PreviewOrientation(
+            _PreviewColorScheme(
+                _PreviewDevices(ContentView())
+            )
+        )
     }
 }

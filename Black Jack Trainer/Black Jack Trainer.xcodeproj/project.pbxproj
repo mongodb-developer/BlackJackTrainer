@@ -24,6 +24,7 @@
 		0A7E380A27182A6400B25F6C /* _PreviewColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E380927182A6400B25F6C /* _PreviewColorScheme.swift */; };
 		0A7E380C27182C0700B25F6C /* _PreviewOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E380B27182C0700B25F6C /* _PreviewOrientation.swift */; };
 		0A7E380E27182CE500B25F6C /* _PreviewDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7E380D27182CE500B25F6C /* _PreviewDevices.swift */; };
+		0AAE95AB2719AEA3004DFF32 /* _PreviewNoDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE95AA2719AEA3004DFF32 /* _PreviewNoDevice.swift */; };
 		0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */; };
 		0AB3466327157DDB00806633 /* DefaultDecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3466227157DDB00806633 /* DefaultDecisionView.swift */; };
 		0AB34665271580D000806633 /* HandValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB34664271580D000806633 /* HandValueLabel.swift */; };
@@ -58,6 +59,7 @@
 		0A7E380927182A6400B25F6C /* _PreviewColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PreviewColorScheme.swift; sourceTree = "<group>"; };
 		0A7E380B27182C0700B25F6C /* _PreviewOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PreviewOrientation.swift; sourceTree = "<group>"; };
 		0A7E380D27182CE500B25F6C /* _PreviewDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PreviewDevices.swift; sourceTree = "<group>"; };
+		0AAE95AA2719AEA3004DFF32 /* _PreviewNoDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PreviewNoDevice.swift; sourceTree = "<group>"; };
 		0AB3465E2714DD0C00806633 /* SoftDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDecisionView.swift; sourceTree = "<group>"; };
 		0AB3466227157DDB00806633 /* DefaultDecisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDecisionView.swift; sourceTree = "<group>"; };
 		0AB34664271580D000806633 /* HandValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandValueLabel.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				0A7E380927182A6400B25F6C /* _PreviewColorScheme.swift */,
 				0A7E380B27182C0700B25F6C /* _PreviewOrientation.swift */,
 				0A7E380D27182CE500B25F6C /* _PreviewDevices.swift */,
+				0AAE95AA2719AEA3004DFF32 /* _PreviewNoDevice.swift */,
 			);
 			path = "Custom Previews";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				0A7E3807271819B900B25F6C /* TypeOfHandsSelector.swift in Sources */,
 				0A2CB5B327149719003A4960 /* CardView.swift in Sources */,
 				0A779CD02710D9DE00026A86 /* Black_Jack_TrainerApp.swift in Sources */,
+				0AAE95AB2719AEA3004DFF32 /* _PreviewNoDevice.swift in Sources */,
 				0A779CE02710DA7200026A86 /* Decision.swift in Sources */,
 				0A2CB5B82714A9A0003A4960 /* ActionAreaView.swift in Sources */,
 				0AB3465F2714DD0C00806633 /* SoftDecisionView.swift in Sources */,

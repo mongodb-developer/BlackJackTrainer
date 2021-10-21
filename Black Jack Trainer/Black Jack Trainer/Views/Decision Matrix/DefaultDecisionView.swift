@@ -23,7 +23,7 @@ struct DefaultDecisionView: View {
                         HStack(spacing: 0) {
                             CardValueLabel()
                             ForEach(CardValue.allCases) { valueLabel in
-                                CardValueLabel(cardValue: valueLabel)
+                                CardValueLabel(valueLabel)
                             }
                         }
                         VStack(spacing: 0) {
@@ -65,9 +65,18 @@ struct DefaultDecisionView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return Group {
-            DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine)
-            DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine, editable: true)
-        }
+        return _PreviewOrientation(
+            _PreviewColorScheme(
+                Group {
+                    NavigationView {
+                        DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine)
+                    }
+                    NavigationView {
+                        DefaultDecisionView(myHandValue: 6, dealerCardValue: .nine, editable: true)
+                    }
+                }
+                    .navigationViewStyle(StackNavigationViewStyle())
+            )
+        )
     }
 }

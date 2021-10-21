@@ -23,13 +23,13 @@ struct SplitDecisionView: View {
                         HStack(spacing: 0) {
                             CardValueLabel()
                             ForEach(CardValue.allCases) { valueLabel in
-                                CardValueLabel(cardValue: valueLabel)
+                                CardValueLabel(valueLabel)
                             }
                         }
                         VStack(spacing: 0) {
                             ForEach(CardValue.allCases.reversed()) { cardValue in
                                 HStack(spacing: 0) {
-                                    CardValueLabel(cardValue: cardValue)
+                                    CardValueLabel(cardValue)
                                     ForEach(CardValue.allCases) { thisDealerCardValue in
                                         let decision = decisions.decisions[cardValue.index].decisions[thisDealerCardValue.index]
                                         if editable {
@@ -65,8 +65,18 @@ struct SplitDecisionView_Previews: PreviewProvider {
         if !Decisions.areDecisionsPopulated {
             Decisions.bootstrapDecisions()
         }
-        return NavigationView {
-            SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
-        }
+        return _PreviewOrientation(
+            _PreviewColorScheme(
+                 Group {
+                    NavigationView {
+                        SplitDecisionView(myHandValue: 6, dealerCardValue: .nine)
+                    }
+                    NavigationView {
+                        SplitDecisionView(myHandValue: 6, dealerCardValue: .nine, editable: true)
+                    }
+                }
+                    .navigationViewStyle(StackNavigationViewStyle())
+            )
+        )
     }
 }

@@ -80,6 +80,8 @@ struct ActionAreaView: View {
 
 struct ActionAreaView_Previews: PreviewProvider {
     static var previews: some View {
-        ActionAreaView(card1: Card(), card2: Card(), dealerCard: Card())
+        _PreviewColorScheme (
+            ActionAreaView(card1: Card(), card2: Card(), dealerCard: Card())
+        )
     }
 }

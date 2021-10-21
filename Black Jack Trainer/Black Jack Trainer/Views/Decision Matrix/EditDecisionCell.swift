@@ -47,10 +47,14 @@ struct EditDecisionCell_Previews: PreviewProvider {
             Decision(handValue: 6, dealerCardValue: .nine, action: .double),
             Decision(handValue: 6, dealerCardValue: .nine, action: .hit)
         ]
-        HStack (spacing: 0) {
-            ForEach(decisions) { decision in
-                EditDecisionCell(decision: decision)
-            }
-        }
+        _PreviewNoDevice(
+            _PreviewColorScheme(
+                HStack (spacing: 0) {
+                    ForEach(decisions) { decision in
+                        EditDecisionCell(decision: decision)
+                    }
+                }
+            )
+        )
     }
 }

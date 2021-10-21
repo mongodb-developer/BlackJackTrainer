@@ -44,6 +44,9 @@ struct ResetButton: View {
 
 struct ResetButton_Previews: PreviewProvider {
     static var previews: some View {
-        ResetButton(label: "Reset All Matrices", resetType: .all)
+        _PreviewNoDevice (
+            _PreviewColorScheme(
+                ResetButton(label: "Reset All Matrices", resetType: .all)
+            ))
     }
 }

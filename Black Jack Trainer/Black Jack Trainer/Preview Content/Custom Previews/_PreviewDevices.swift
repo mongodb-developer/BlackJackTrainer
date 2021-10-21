@@ -25,6 +25,7 @@ struct _PreviewDevices<Value: View>: View {
             ForEach(devices, id: \.self) { device in
                 viewToPreview
                     .previewDevice(PreviewDevice(rawValue: device))
+                    .previewDisplayName(device)
             }
         }
     }

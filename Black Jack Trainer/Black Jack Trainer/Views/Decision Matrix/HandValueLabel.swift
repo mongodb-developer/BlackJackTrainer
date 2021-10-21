@@ -22,10 +22,14 @@ struct HandValueLabel: View {
 
 struct HandValueLabel_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 0) {
-            ForEach((5...21).reversed(), id: \.self) {
-                HandValueLabel(handValue: $0)
-            }
-        }
+        _PreviewNoDevice(
+            _PreviewColorScheme(
+                VStack(spacing: 0) {
+                    ForEach((5...21).reversed(), id: \.self) {
+                        HandValueLabel(handValue: $0)
+                    }
+                }
+            )
+        )
     }
 }

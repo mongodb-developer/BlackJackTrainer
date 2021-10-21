@@ -21,15 +21,12 @@ struct TypeOfHandsSelector: View {
     }
 }
 
-//case all = 0
-//case split = 1
-//case soft = 2
-//case other = 3
-
 struct TypeOfHandsSelector_Previews: PreviewProvider {
     static var previews: some View {
-        Form {
-            TypeOfHandsSelector(settings: Settings())
-        }
+        _PreviewOrientation (
+            Form {
+                TypeOfHandsSelector(settings: Settings())
+            }
+        )
     }
 }

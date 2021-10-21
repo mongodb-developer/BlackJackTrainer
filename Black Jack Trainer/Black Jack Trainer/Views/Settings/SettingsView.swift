@@ -17,48 +17,48 @@ struct SettingsView: View {
     @State private var isConfirming = false
     
     var body: some View {
-            Form {
-                Section(header: Text("Edit Decision Matrices")) {
-                    Button(action: { showingSoftMatrix.toggle() }) {
-                        HStack {
-                            Text("Soft Hand Decisions")
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    Button(action: { showingSplitMatrix.toggle() }) {
-                        HStack {
-                            Text("Split Hand Decisions")
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    Button(action: { showingDefaultMatrix.toggle() }) {
-                        HStack {
-                            Text("Regular Hand Decisions")
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.secondary)
-                        }
-                    }
+        Form {
+            Section(header: Text("Edit Decision Matrices")) {
+                Button(action: { showingSoftMatrix.toggle() }) {
                     HStack {
+                        Text("Soft Hand Decisions")
+                            .foregroundColor(.primary)
                         Spacer()
-                        ResetButton(label: "Reset All Matrices", resetType: .all)
-                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
                     }
-                    .padding()
                 }
-                if let settings = settings.first {
-                    Section(header: Text("What types of card")) {
-                        TypeOfHandsSelector(settings: settings)
+                Button(action: { showingSplitMatrix.toggle() }) {
+                    HStack {
+                        Text("Split Hand Decisions")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
                     }
+                }
+                Button(action: { showingDefaultMatrix.toggle() }) {
+                    HStack {
+                        Text("Regular Hand Decisions")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
+                    }
+                }
+                HStack {
+                    Spacer()
+                    ResetButton(label: "Reset All Matrices", resetType: .all)
+                    Spacer()
+                }
+                .padding()
+            }
+            if let settings = settings.first {
+                Section(header: Text("What types of card")) {
+                    TypeOfHandsSelector(settings: settings)
                 }
             }
+        }
         .navigationBarTitle("Settings", displayMode: .inline)
         Group {
             NavigationLink(destination: SoftDecisionView(editable: true), isActive: $showingSoftMatrix) {
@@ -77,8 +77,11 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Settings.initSettings()
-        return NavigationView {
-            SettingsView()
-        }
+        return _PreviewOrientation (
+            NavigationView {
+                SettingsView()
+            }
+                .navigationViewStyle(StackNavigationViewStyle())
+        )
     }
 }
