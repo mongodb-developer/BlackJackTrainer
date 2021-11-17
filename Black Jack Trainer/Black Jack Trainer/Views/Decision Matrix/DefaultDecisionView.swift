@@ -9,7 +9,8 @@ import SwiftUI
 import RealmSwift
 
 struct DefaultDecisionView: View {
-    @ObservedResults(Decisions.self, filter: NSPredicate(format: "isSoft == NO AND isSplit == NO")) var decisions
+    @ObservedResults(Decisions.self,
+                     filter: NSPredicate(format: "isSoft == NO AND isSplit == NO")) var decisions
     
     var myHandValue: Int? = nil
     var dealerCardValue: CardValue? = nil

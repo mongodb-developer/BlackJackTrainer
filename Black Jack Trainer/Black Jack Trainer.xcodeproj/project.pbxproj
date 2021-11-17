@@ -116,6 +116,7 @@
 				0A779CCF2710D9DE00026A86 /* Black_Jack_TrainerApp.swift */,
 				0A779CDD2710DA0800026A86 /* Views */,
 				0A779CDE2710DA1D00026A86 /* Model */,
+				0A7E380827182A0F00B25F6C /* Custom Previews */,
 				0A779CD32710D9E000026A86 /* Assets.xcassets */,
 				0A779CD52710D9E000026A86 /* Preview Content */,
 			);
@@ -125,7 +126,6 @@
 		0A779CD52710D9E000026A86 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0A7E380827182A0F00B25F6C /* Custom Previews */,
 				0A779CD62710D9E000026A86 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
